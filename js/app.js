@@ -1,116 +1,83 @@
 /* =========================
-   SMOOTH SCROLL FOR NAV LINKS
+   PROJECT MODALS
 ========================= */
-document.querySelectorAll('.nav-links a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const modalId = card.dataset.modal;
+    const modal = document.getElementById(modalId);
+    if(modal) modal.style.display = 'flex';
+  });
+});
+
+document.querySelectorAll('.modal-close').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.modal').style.display = 'none';
+  });
+});
+
+// Close modal if clicked outside content
+window.addEventListener('click', (e) => {
+  document.querySelectorAll('.modal').forEach(modal => {
+    if(e.target === modal) modal.style.display = 'none';
   });
 });
 
 /* =========================
-   CONTACT FORM SUBMISSION
+   CONTACT FORM
 ========================= */
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
-const submitButton = contactForm.querySelector('button');
-const btnText = submitButton.querySelector('.btn-text');
-const btnSpinner = submitButton.querySelector('.btn-spinner');
 
-contactForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  if (!name || !email || !message) {
-    showStatus('Please fill in all fields.', 'error');
-    return;
-  }
-
-  // Show spinner
-  btnText.style.display = 'none';
-  btnSpinner.style.display = 'inline-block';
-  showStatus('Sending...', 'loading');
-
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message })
-    });
-
-    if (response.ok) {
-      showStatus('Message sent successfully!', 'success');
-      contactForm.reset();
-    } else {
-      const data = await response.json();
-      showStatus(data.error || 'Something went wrong.', 'error');
+if(contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    if(!name || !email || !message) {
+      formStatus.textContent = "⚠️ Please fill out all fields.";
+      formStatus.style.color = 'red';
+      return;
     }
-  } catch (error) {
-    console.error('Error:', error);
-    showStatus('Unable to send message. Try again later.', 'error');
-  } finally {
+
+    // Show spinner
+    const btn = contactForm.querySelector('button');
+    btn.querySelector('.btn-text').style.display = 'none';
+    btn.querySelector('.btn-spinner').style.display = 'inline-block';
+    formStatus.textContent = '';
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server responded with status ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      if(result.success) {
+        formStatus.textContent = "✅ Message sent successfully!";
+        formStatus.style.color = '#00bfa6';
+        contactForm.reset();
+      } else {
+        formStatus.textContent = "❌ Failed to send message. Try again later.";
+        formStatus.style.color = 'red';
+      }
+
+    } catch(err) {
+      console.error('Error submitting form:', err);
+      formStatus.textContent = "⚠️ Error sending message. Please try again later.";
+      formStatus.style.color = 'red';
+    }
+
     // Hide spinner
-    btnText.style.display = 'inline-block';
-    btnSpinner.style.display = 'none';
-  }
-});
-
-function showStatus(message, type) {
-  formStatus.textContent = message;
-  formStatus.style.opacity = 1;
-
-  switch (type) {
-    case 'loading':
-      formStatus.style.color = '#00b4d8';
-      break;
-    case 'success':
-      formStatus.style.color = '#90e0ef';
-      break;
-    case 'error':
-      formStatus.style.color = '#ff4c4c';
-      break;
-    default:
-      formStatus.style.color = '#ffffff';
-  }
-
-  if (type !== 'loading') {
-    setTimeout(() => {
-      formStatus.style.opacity = 0;
-    }, 5000);
-  }
+    btn.querySelector('.btn-text').style.display = 'inline-block';
+    btn.querySelector('.btn-spinner').style.display = 'none';
+  });
 }
-
-/* =========================
-   PROJECT CARD MODALS
-========================= */
-const projectCards = document.querySelectorAll('.project-card');
-const modals = document.querySelectorAll('.modal');
-
-projectCards.forEach(card => {
-  card.addEventListener('click', () => {
-    const modalId = card.getAttribute('data-modal');
-    const modal = document.getElementById(modalId);
-    if (modal) modal.style.display = 'block';
-  });
-});
-
-modals.forEach(modal => {
-  const closeBtn = modal.querySelector('.modal-close');
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-});
-
-window.addEventListener('click', (e) => {
-  modals.forEach(modal => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-});

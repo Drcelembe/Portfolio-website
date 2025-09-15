@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Azola",
+    "email": "azola@example.com",
+    "message": "Testing JSON logging",
+    "timestamp": "2025-09-14T23:20:02.565Z"
+  },
+  {
+    "name": "Azola Cele",
+    "email": "azolacele@gmail.com",
+    "message": "tttt",
+    "timestamp": "2025-09-15T16:08:33.353Z"
+  },
+  {
+    "name": "Azola Cele",
+    "email": "azolacele@gmail.com",
+    "message": "we are live!!!",
+    "timestamp": "2025-09-15T16:09:41.391Z"
+  }
+]

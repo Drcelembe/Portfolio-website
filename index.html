@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azola Nkanyezi Cele | Fullstack Developer</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azola Nkanyezi Cele – Full-Stack Developer Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <!-- ===== HEADER ===== -->
@@ -13,6 +13,7 @@
     <nav>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -23,87 +24,170 @@
   <!-- ===== HERO ===== -->
   <section class="hero">
     <h1>Hi, I’m <span class="highlight">Azola Nkanyezi Cele</span></h1>
-    <p>
-      Fullstack Web App Developer | Building scalable, client-focused solutions in 
-      <strong>JavaScript (Node.js/Express)</strong>, <strong>Python</strong>, and <strong>Custom CRMs</strong>.
-    </p>
-    <a href="#contact" class="btn-primary">Work With Me</a>
+    <p>I help businesses scale with <strong>custom full-stack apps</strong>, <strong>CRMs</strong>, and <strong>automation systems</strong>.</p>
+    <div class="hero-cta">
+      <a href="#services" class="btn-primary">See What I Offer</a>
+      <a href="#contact" class="btn-secondary">Start a Project</a>
+    </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
-  <section id="about" class="section">
+  <section id="about" class="section about">
     <h2>About Me</h2>
     <p>
-      I’m a fullstack developer with expertise in <strong>JavaScript</strong>, <strong>Python</strong>, and 
-      <strong>CRM systems</strong>. From frontend polish to backend APIs and database systems, I build live, 
-      production-ready applications that streamline operations and drive business growth.
+      I build scalable full-stack applications using <strong>Node.js/Express</strong>, <strong>JavaScript</strong>, <strong>HTML/CSS</strong>, and <strong>Python</strong>.
+      I also design <strong>custom CRMs</strong>, dashboards, and backend logging systems to help clients streamline operations and grow faster.
     </p>
   </section>
 
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section services">
+    <h2>Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Custom Web Apps</h3>
+        <p>End-to-end development of booking systems, dashboards, and productivity tools tailored to your business needs.</p>
+      </div>
+      <div class="service-card">
+        <h3>CRM Development</h3>
+        <p>Design and implementation of powerful CRM systems to manage clients, sales pipelines, and communication.</p>
+      </div>
+      <div class="service-card">
+        <h3>Automation & APIs</h3>
+        <p>Automate workflows and integrate third-party services with secure, scalable APIs.</p>
+      </div>
+      <div class="service-card">
+        <h3>Data & Analytics</h3>
+        <p>Custom finance trackers, reporting dashboards, and data-driven insights built with Python and JavaScript.</p>
+      </div>
+    </div>
+    <div class="cta-center">
+      <a href="#contact" class="btn-primary">Let’s Build Something</a>
+    </div>
+  </section>
+
   <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section">
-    <h2>Featured Projects</h2>
+  <section id="projects" class="section portfolio">
+    <h2>Projects</h2>
+    <p class="section-intro">A few examples of systems I’ve built for real-world use cases.</p>
     <div class="project-grid">
-      <div class="project-card">
+
+      <div class="project-card" data-modal="modal-booking">
+        <img src="images/booking-demo.png" alt="Booking System">
         <h3>Booking System</h3>
-        <p>
-          End-to-end appointment booking app with Node.js/Express backend & database integration.
-        </p>
+        <p>Full-stack booking app with Node.js/Express and JSON logging.</p>
       </div>
-      <div class="project-card">
+
+      <div class="project-card" data-modal="modal-finance">
+        <img src="images/finance-demo.png" alt="Finance Tracker">
         <h3>Finance Tracker</h3>
-        <p>
-          Personal finance + crypto tracker with live data feeds, dashboards, and Python data processing.
-        </p>
+        <p>Finance + crypto tracker with live dashboards and Python backend.</p>
       </div>
-      <div class="project-card">
+
+      <div class="project-card" data-modal="modal-crm">
+        <img src="images/crm-demo.png" alt="CRM System">
+        <h3>CRM System</h3>
+        <p>Custom CRM built with Node.js/Express and Python analytics.</p>
+      </div>
+
+      <div class="project-card" data-modal="modal-productivity">
+        <img src="images/productivity-demo.png" alt="Productivity App">
         <h3>Productivity App</h3>
-        <p>
-          Task and Pomodoro tracker with modular JavaScript frontend and backend API integration.
-        </p>
+        <p>Task & Pomodoro tracker with Node.js backend and JSON logging.</p>
       </div>
-      <div class="project-card">
-        <h3>Custom CRM System</h3>
-        <p>
-          Full-featured CRM solution built for client relationship management, sales pipelines, and business workflows.
-        </p>
-      </div>
+
+    </div>
+    <div class="cta-center">
+      <a href="#contact" class="btn-secondary">Discuss Your Project</a>
     </div>
   </section>
 
   <!-- ===== SKILLS ===== -->
-  <section id="skills" class="section">
+  <section id="skills" class="section skills">
     <h2>Skills</h2>
     <ul class="skills-list">
       <li>HTML, CSS, JavaScript</li>
       <li>Node.js, Express.js</li>
       <li>Python (Flask, Django, Data Processing)</li>
-      <li>Custom CRM Development</li>
       <li>MongoDB, SQL</li>
       <li>API Development & Integration</li>
-      <li>Frontend Frameworks</li>
+      <li>CRM Systems</li>
     </ul>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
+  <section id="contact" class="section contact">
+    <h2>Let’s Work Together</h2>
+    <p>Ready to take your business systems to the next level? Fill out the form or reach me directly.</p>
     <form id="contactForm">
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn-primary">
-  <span class="btn-text">Send Message</span>
-  <span class="btn-spinner" style="display:none;">⏳</span>
-</button>
-
-    <div id="formStatus"></div>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">
+        <span class="btn-text">Send Message</span>
+        <span class="btn-spinner" style="display:none;">⏳</span>
+      </button>
+      <p id="formStatus"></p>
+    </form>
+    <div class="alt-contact">
+      <p>Or reach me via:</p>
+      <ul>
+        <li>Email: <a href="mailto:azola@example.com">azola@example.com</a></li>
+        <li>GitHub: <a href="https://github.com/Drcelembe" target="_blank">Drcelembe</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/azola-cele" target="_blank">LinkedIn Profile</a></li>
+      </ul>
+    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>&copy; 2025 Azola Nkanyezi Cele. All rights reserved.</p>
+    <p>&copy; 2025 Azola Nkanyezi Cele. All Rights Reserved.</p>
   </footer>
+
+  <!-- ===== MODALS ===== -->
+  <div id="modal-booking" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Booking System</h3>
+      <img src="images/booking-demo.png" alt="Booking Demo">
+      <p>Full-stack booking app with live JSON logging.</p>
+      <a href="https://portfolio-website-59rq.onrender.com/booking" target="_blank" class="btn primary">Live Demo</a>
+      <a href="https://github.com/Drcelembe/Portfolio-website" target="_blank" class="btn secondary">GitHub Repo</a>
+    </div>
+  </div>
+
+  <div id="modal-finance" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Finance Tracker</h3>
+      <img src="images/finance-demo.png" alt="Finance Demo">
+      <p>Finance + crypto tracker with Node.js backend and Python processing.</p>
+      <a href="https://portfolio-website-59rq.onrender.com/finance" target="_blank" class="btn primary">Live Demo</a>
+      <a href="https://github.com/Drcelembe/Portfolio-website" target="_blank" class="btn secondary">GitHub Repo</a>
+    </div>
+  </div>
+
+  <div id="modal-crm" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>CRM System</h3>
+      <img src="images/crm-demo.png" alt="CRM Demo">
+      <p>Custom CRM with Node.js/Express & Python backend analytics.</p>
+      <a href="https://portfolio-website-59rq.onrender.com/crm" target="_blank" class="btn primary">Live Demo</a>
+      <a href="https://github.com/Drcelembe/Portfolio-website" target="_blank" class="btn secondary">GitHub Repo</a>
+    </div>
+  </div>
+
+  <div id="modal-productivity" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Productivity App</h3>
+      <img src="images/productivity-demo.png" alt="Productivity Demo">
+      <p>Task & Pomodoro tracker with Node.js backend & JSON logging.</p>
+      <a href="https://portfolio-website-59rq.onrender.com/productivity" target="_blank" class="btn primary">Live Demo</a>
+      <a href="https://github.com/Drcelembe/Portfolio-website" target="_blank" class="btn secondary">GitHub Repo</a>
+    </div>
+  </div>
 
   <script src="js/app.js"></script>
 </body>
