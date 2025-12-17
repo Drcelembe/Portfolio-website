@@ -2,7 +2,10 @@
    PROJECT MODALS
 ========================= */
 document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('click', () => {
+  card.addEventListener('click', (e) => {
+    // Ignore clicks on links inside the card
+    if (e.target.tagName === 'A') return;
+
     const modalId = card.dataset.modal;
     const modal = document.getElementById(modalId);
     if(modal) modal.style.display = 'flex';
@@ -81,3 +84,44 @@ if(contactForm) {
     btn.querySelector('.btn-spinner').style.display = 'none';
   });
 }
+
+// ===== PAYPAL BUTTON REDIRECT =====
+document.addEventListener('DOMContentLoaded', () => {
+  const paypalBtn = document.getElementById('paypalBtn'); // Make sure your PayPal button has id="paypalBtn"
+  
+  if (paypalBtn) {
+    paypalBtn.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      // Open PayPal in a new tab safely
+      window.open('https://paypal.me/AzolaCele/50', '_blank', 'noopener,noreferrer');
+    });
+  }
+});
+
+// ===== DOM READY =====
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ===== PAYPAL BUTTON REDIRECT =====
+  const paypalBtn = document.getElementById('paypalBtn');
+  if (paypalBtn) {
+    paypalBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.open('https://paypal.me/AzolaCele/50', '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  // ===== OPTIONAL: Smooth Scroll for Hero CTA Buttons =====
+  const heroBtns = document.querySelectorAll('.hero-cta a');
+  heroBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+});
+

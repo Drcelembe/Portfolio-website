@@ -9,7 +9,9 @@
 <body>
   <!-- ===== HEADER ===== -->
   <header class="navbar">
-    <div class="logo">Azola Cele</div>
+    <div class="logo">
+      <img src="logo/built-by-cele.png" alt="Built by Cele logo">
+    </div>
     <nav>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -17,6 +19,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="book.html" class="btn-secondary">Book a Call</a></li>
       </ul>
     </nav>
   </header>
@@ -66,35 +69,211 @@
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section portfolio">
-    <h2>Projects</h2>
-    <p class="section-intro">A few examples of systems I’ve built for real-world use cases.</p>
-    <div class="project-grid">
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section portfolio">
+  <h2>Projects</h2>
+  <p class="section-intro">A showcase of booking systems, CRMs, and financial platforms I’ve built across industries.</p>
+  <div class="project-grid">
 
-      <div class="project-card" data-modal="modal-booking">
-        <img src="images/booking-demo.png" alt="Booking System">
-        <h3>Booking System</h3>
-        <p>Full-stack booking app with Node.js/Express and JSON logging.</p>
-      </div>
+    <!-- LuxMed Booking -->
+  <!-- BookingSuite Pro -->
+<div class="project-card" data-modal="modal-bookingsuite">
+  <img src="assets/projects/luxmed-booking.png" alt="LuxMed Booking App">
+  <h3>BookingSuite Pro</h3>
+  <p>
+    A full-stack booking platform for small service-based businesses to schedule clients,
+    manage availability, and track appointments.
+  </p>
+</div>
 
-      <div class="project-card" data-modal="modal-finance">
-        <img src="images/finance-demo.png" alt="Finance Tracker">
-        <h3>Finance Tracker</h3>
-        <p>Finance + crypto tracker with live dashboards and Python backend.</p>
-      </div>
 
-      <div class="project-card" data-modal="modal-crm">
-        <img src="images/crm-demo.png" alt="CRM System">
-        <h3>CRM System</h3>
-        <p>Custom CRM built with Node.js/Express and Python analytics.</p>
-      </div>
+    <!-- FinanceOps -->
+    <div class="project-card" data-modal="modal-finance">
+      <img src="Assets/projects/FinanceOps Screeshot for portfolio.png" alt="FinanceOps">
+      <h3>FinanceOps</h3>
+      <p>Finance + crypto tracker with live dashboards and Python backend.</p>
+    </div>
 
-      <div class="project-card" data-modal="modal-productivity">
-        <img src="images/productivity-demo.png" alt="Productivity App">
-        <h3>Productivity App</h3>
-        <p>Task & Pomodoro tracker with Node.js backend and JSON logging.</p>
-      </div>
+    <!-- ClientOps CRM -->
+    <div class="project-card" data-modal="modal-crm">
+      <img src="Assets/projects/ClientOps Screenshot for portfolio .png" alt="ClientOps CRM">
+      <h3>ClientOps CRM</h3>
+      <p>Custom CRM built with Node.js/Express and Python analytics.</p>
+    </div>
+
+    <!-- WealthSphere -->
+    <div class="project-card" data-modal="modal-wealthsphere">
+      <img src="Assets/projects/WealthSphere screenshot for portfolio .png" alt="WealthSphere App">
+      <h3>WealthSphere</h3>
+      <p>Wealth dashboard with portfolio tracking and reporting for individuals.</p>
+    </div>
+
+    <!-- Fit For You -->
+    <div class="project-card" data-modal="modal-fitforyou">
+      <img src="Assets/projects/Fit-For-You screenshot for Portfolio.png" alt="Fit For You App">
+      <h3>Fit For You</h3>
+      <p>Custom fitness app with personalized workout plans and progress tracking.</p>
+    </div>
+
+    <!-- FitFlex -->
+    <div class="project-card" data-modal="modal-fitflex">
+      <img src="Assets/projects/Fit-flex screenshot for portfolio.png" alt="FitFlex App">
+      <h3>FitFlex</h3>
+      <p>Membership platform with subscription billing, trainer dashboards, and class bookings.</p>
+    </div>
+
+  </div>
+  <div class="cta-center">
+    <a href="#contact" class="btn-secondary">Discuss Your Project</a>
+  </div>
+</section>
+
+<!-- ===== MODALS ===== -->
+
+<!-- FinanceOps -->
+<div id="modal-financeops" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>FinanceOps</h3>
+    <img src="assets/projects/financeops.png" alt="FinanceOps">
+    <p>
+      Finance and crypto tracking platform for startups and solopreneurs,
+      featuring cashflow dashboards, investment tracking, and performance analytics.
+    </p>
+  <a href="https://financeops11.netlify.app/" target="_blank" class="btn primary">Live Demo</a>
+    <a href="https://github.com/Drcelembe/FinanceOps" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+
+
+<!-- ClientOps -->
+<div id="modal-clientops" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>ClientOps CRM</h3>
+    <img src="assets/projects/clientops.png" alt="ClientOps CRM">
+    <p>
+      Lightweight CRM built for startups and small businesses to manage leads,
+      clients, pipelines, and internal workflows in one place.
+    </p>
+ <a href="https://clientops2203.netlify.app/" target="_blank" class="btn primary">Live Demo</a>
+    <a href="https://github.com/Drcelembe/ClientOps" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+
+<!-- BookingSuite Pro Modal -->
+<div id="modal-bookingsuite" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>BookingSuite Pro</h3>
+    <img src="assets/projects/luxmed-booking.png" alt="BookingSuite Pro">
+    <p>
+      A full-stack booking platform for service-based businesses to manage availability,
+      client scheduling, and appointment tracking.
+    </p>
+    <a href="https://luxmed-booking.netlify.app/" target="_blank" class="btn primary">Live Demo</a>
+    <a href="https://github.com/Drcelembe/luxmed-booking" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+
+<!-- SpineCare -->
+<div id="modal-spinecare" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>SpineCare Booking App</h3>
+    <img src="images/spinecare-demo.png" alt="images/spinecare-demo.png">
+    <p><strong>Case Study:</strong> Developed a booking platform for physiotherapy sessions. Reduced phone bookings by 60% and improved patient satisfaction.</p>
+    <a href="https://github.com/Drcelembe/SpineCare" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+<!-- Medi-Life -->
+<div id="modal-medilife" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>Medi-Life</h3>
+    <img src="images/medilife-demo.png" alt="images/medilife-demo.png">
+    <p><strong>Case Study:</strong> A healthcare app for managing patients, records, and prescriptions. Reduced admin workload by 40%.</p>
+    <a href="https://github.com/Drcelembe/MediLife" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+<!-- Pillay Chiropractors -->
+<div id="modal-pillay" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>Pillay Chiropractors</h3>
+    <img src="Assets/projects/luxmed-booking.png" alt="images/pillay-demo.png">
+    <p><strong>Case Study:</strong> Built a chiropractic booking system with automated SMS reminders. Reduced no-shows by 35%.</p>
+    <a href="https://github.com/Drcelembe/PillayChiropractors" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+<!-- CapitalFlow -->
+<div id="modal-capitalflow" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>CapitalFlow</h3>
+    <img src="images/capitalflow-demo.png" alt="images/capitalflow-demo.png">
+    <p><strong>Case Study:</strong> Small business finance tracker with automated cashflow reporting. Helped clients eliminate financial blindspots.</p>
+    <a href="https://github.com/Drcelembe/CapitalFlow" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+<!-- WealthSphere -->
+<div id="modal-wealthsphere" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>WealthSphere</h3>
+    <img src="assets/projects/wealthsphere.png" alt="WealthSphere">
+    <p>
+      Personal wealth management dashboard for tracking assets,
+      liabilities, and long-term financial performance.
+    </p>
+    <a href="https://wealthspere.netlify.app/" target="_blank" class="btn primary">Live Demo</a>
+    <a href="https://github.com/Drcelembe/WealthSphere" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+
+<!-- Fit For You -->
+<!-- Fit For You -->
+<div id="modal-fitforyou" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>Fit For You</h3>
+    <img src="assets/projects/fit-for-you.png" alt="Fit For You Fitness App">
+    <p>
+      <strong>Case Study:</strong> A fitness coaching platform designed for personal trainers,
+      featuring personalized workout plans, progress tracking, and client engagement tools.
+      Built to help trainers scale their services and improve client retention.
+    </p>
+       <a href="https://fitforyou222.netlify.app/" target="_blank" class="btn primary">Live Demo</a>
+    <a href="https://github.com/Drcelembe/WealthSphere" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+  </div>
+</div>
+
+
+<!-- FitFlex -->
+<div id="modal-fitflex" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>FitFlex</h3>
+    <img src="assets/projects/fitflex.png" alt="FitFlex">
+    <p>
+      Fitness membership and class-booking platform with subscriptions,
+      trainer dashboards, and client management.
+    </p>
+    <a href="https://sprightly-capybara-455044.netlify.app/" target="_blank" class="btn primary">Live Demo</a>
+    <a href="https://github.com/Drcelembe/FitFlex" target="_blank" class="btn secondary">GitHub Repo</a>
+  </div>
+</div>
+
+
 
     </div>
     <div class="cta-center">
@@ -129,19 +308,23 @@
       </button>
       <p id="formStatus"></p>
     </form>
-    <div class="alt-contact">
-      <p>Or reach me via:</p>
-      <ul>
-        <li>Email: <a href="mailto:azola@example.com">azola@example.com</a></li>
-        <li>GitHub: <a href="https://github.com/Drcelembe" target="_blank">Drcelembe</a></li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/azola-cele" target="_blank">LinkedIn Profile</a></li>
-      </ul>
-    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>&copy; 2025 Azola Nkanyezi Cele. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logo/built-by-cele.png" alt="Built by Cele logo">
+      </div>
+      <div class="footer-info">
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/built_by_cele" target="_blank">@built_by_cele</a></p>
+        <p><strong>Facebook:</strong> <a href="https://facebook.com/built.by.cele" target="_blank">@built.by.cele</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Drcelembe" target="_blank">Drcelembe</a></p>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2025 Azola Nkanyezi Cele. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
 
   <!-- ===== MODALS ===== -->

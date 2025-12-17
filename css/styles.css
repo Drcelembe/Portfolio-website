@@ -37,10 +37,13 @@ a {
 .btn.primary {
   background-color: #00bfa6;
   color: #121212;
+  transition: all 0.3s ease;
 }
 
 .btn.primary:hover {
   background-color: #00a08c;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,191,166,0.4);
 }
 
 .btn.secondary {
@@ -52,6 +55,33 @@ a {
 .btn.secondary:hover {
   background-color: #00bfa6;
   color: #121212;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,191,166,0.3);
+}
+
+/* =========================
+   HIGHLIGHT PAYPAL & SCHEDULE BUTTONS
+========================= */
+#paypalBtn, 
+a[href*="calendar.google.com"] {
+  background-color: #00ff9c; /* neon green */
+  color: #121212;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease, transform 0.2s;
+  box-shadow: 0 6px 20px rgba(0,255,156,0.4);
+}
+
+#paypalBtn:hover, 
+a[href*="calendar.google.com"]:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,255,156,0.5);
+  background-color: #00e68a;
+  animation: pulse 1.2s infinite;
 }
 
 /* =========================
@@ -74,6 +104,12 @@ header .logo {
   color: #00bfa6;
 }
 
+header .logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -83,6 +119,7 @@ header .logo {
 .nav-links li a {
   color: #e0e0e0;
   font-weight: 500;
+  transition: color 0.3s;
 }
 
 .nav-links li a:hover {
@@ -101,6 +138,10 @@ header .logo {
 .hero h1 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.7s forwards;
+  animation-delay: 0.3s;
 }
 
 .hero .highlight {
@@ -110,6 +151,10 @@ header .logo {
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.7s forwards;
+  animation-delay: 0.5s;
 }
 
 .hero .btn-primary {
@@ -121,6 +166,20 @@ header .logo {
 ========================= */
 .section {
   padding: 4rem 2rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+  animation-delay: 0.2s;
+}
+
+.section:nth-child(2) { animation-delay: 0.3s; }
+.section:nth-child(3) { animation-delay: 0.4s; }
+.section:nth-child(4) { animation-delay: 0.5s; }
+
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,191,166,0.25);
 }
 
 .section h2 {
@@ -154,6 +213,12 @@ header .logo {
   background-color: #1f1f1f;
   padding: 0.6rem 1rem;
   border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,191,166,0.3);
 }
 
 /* =========================
@@ -170,13 +235,14 @@ header .logo {
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0, 191, 166, 0.4);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,191,166,0.35);
+  animation: pulse 1.2s infinite;
 }
 
 .project-card img {
@@ -213,6 +279,7 @@ header .logo {
   border-radius: 5px;
   background-color: #1f1f1f;
   color: #e0e0e0;
+  transition: all 0.3s ease, transform 0.2s;
 }
 
 .contact input::placeholder,
@@ -220,18 +287,103 @@ header .logo {
   color: #888;
 }
 
-.contact button {
-  cursor: pointer;
+.contact input:focus,
+.contact textarea:focus {
+  outline: 2px solid #00bfa6;
+  transform: scale(1.02);
 }
 
 /* =========================
-   FOOTER
+   PAYMENTS CARDS
+========================= */
+.payments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.payment-card {
+  background-color: #222222;
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1 1 280px;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.payment-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,191,166,0.3);
+  animation: pulse 1.2s infinite;
+}
+
+.payment-card h3 {
+  color: #00bfa6;
+  margin-bottom: 1rem;
+}
+
+.payment-card p {
+  color: #c0c0c0;
+  margin-bottom: 1rem;
+}
+
+.payment-card .btn-primary {
+  width: 100%;
+}
+
+/* =========================
+   FOOTER (existing base)
 ========================= */
 footer {
   background-color: #1f1f1f;
   text-align: center;
   padding: 1.5rem 0;
   color: #888;
+}
+
+/* =========================
+   FOOTER - CONTACT & LOGO (ADDED)
+========================= */
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footer-logo img {
+  max-width: 140px;
+  height: auto;
+  display: block;
+}
+
+.footer-info {
+  color: #c0c0c0;
+  text-align: left;
+}
+
+.footer-info p {
+  margin: 0.25rem 0;
+}
+
+.footer-info a {
+  color: #00bfa6;
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  color: #888;
+  font-size: 0.95rem;
 }
 
 /* =========================
@@ -259,6 +411,13 @@ footer {
   width: 100%;
   position: relative;
   text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+.modal.show .modal-content {
+  animation: fadeInUp 0.5s forwards;
 }
 
 .modal-content h3 {
@@ -279,6 +438,38 @@ footer {
   font-size: 1.5rem;
   cursor: pointer;
   color: #e0e0e0;
+}
+
+/* =========================
+   GOOGLE CALENDAR EMBED
+========================= */
+.gcal-embed {
+  width: 100%;
+  height: 650px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 20px rgba(0,191,166,0.2);
+  transition: all 0.3s ease, transform 0.3s;
+}
+
+.gcal-embed:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0,191,166,0.25);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
 }
 
 /* =========================
@@ -305,5 +496,44 @@ footer {
 
   .container {
     padding: 1rem;
+  }
+
+  .payment-card {
+    max-width: 100%;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .gcal-embed {
+    height: 500px;
+  }
+
+  .section {
+    animation: fadeInUp 0.6s forwards;
+  }
+
+  .project-card, .payment-card {
+    transform: none !important;
+  }
+
+  .btn-primary, .btn-secondary {
+    transform: none !important;
+  }
+
+  .gcal-embed {
+    transform: none !important;
+  }
+
+  /* Footer responsive */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .footer-info {
+    text-align: center;
   }
 }
